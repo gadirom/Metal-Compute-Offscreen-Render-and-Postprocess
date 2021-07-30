@@ -21,13 +21,13 @@ class DelegateRenderer : NSObject, MTKViewDelegate
     }
     
     func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
-        print("size")
+        //print("size")
         //draw(in: view)
     }
     
     func draw(in view: MTKView) {
         
-        print("draw")
+        //print("draw")
         view.device = device
         guard let renderPassDescriptor = view.currentRenderPassDescriptor else {return}
         guard let drawable = view.currentDrawable else {return}
@@ -50,7 +50,7 @@ class MetalView :MTKView {
         
         super.init(frame: frameRect, device: device)
         
-        self.clearColor = MTLClearColorMake(0.0, 0.5, 1.0, 1.0)
+        self.clearColor = MTLClearColorMake(0.0, 0.0, 1.0, 1.0)
         
         self.isPaused = false
         self.enableSetNeedsDisplay = false 
@@ -59,7 +59,7 @@ class MetalView :MTKView {
         self.delegate = delegate
         
         //print(delegate)
-        print(self.delegate)
+        //print(self.delegate)
         //self.delegate?.draw(in: self)
     }
     
@@ -89,7 +89,7 @@ metalView.delegate = delegate
 PlaygroundPage.current.setLiveView(metalView) 
 </string>
 			<key>ModifiedRange</key>
-			<string>{1, 2094}</string>
+			<string>{1, 2100}</string>
 			<key>OriginalContent</key>
 			<string></string>
 			<key>OriginalRange</key>
