@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Diff</key>
+	<array>
+		<dict>
+			<key>ModifiedContent</key>
+			<string>//Go to "Main constants" page in User Module to tweak constants!
+
+//Turn off "Enable Results" in the Playground settings for better performance!
+
+import MetalKit
+import PlaygroundSupport
+
+var frame = CGRect(x: 0, y: 0, width: startSize, height: startSize)
+    
+let device = MTLCreateSystemDefaultDevice()
+
+let metalView = MetalView(frame: frame)
+let colorPixelFormat = metalView.colorPixelFormat
+frame = metalView.frame
+
+let delegate = DelegateRenderer(device: device, frame: frame, colorPixelFormat:colorPixelFormat)
+metalView.delegate = delegate
+
+PlaygroundPage.current.setLiveView(metalView) 
+</string>
+			<key>ModifiedRange</key>
+			<string>{1, 596}</string>
+			<key>OriginalContent</key>
+			<string></string>
+			<key>OriginalRange</key>
+			<string>{1, 0}</string>
+		</dict>
+	</array>
+	<key>File</key>
+	<string>Chapters/Chapter1.playgroundchapter/Pages/My Playground.playgroundpage/main.swift</string>
+</dict>
+</plist>

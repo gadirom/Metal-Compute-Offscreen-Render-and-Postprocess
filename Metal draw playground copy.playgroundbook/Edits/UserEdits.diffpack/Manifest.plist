@@ -28,6 +28,14 @@
 				<key>File</key>
 				<string>UserModules/UserModule.playgroundmodule/Sources/MetalFunctions.swift</string>
 			</dict>
+			<dict>
+				<key>File</key>
+				<string>UserModules/UserModule.playgroundmodule/Sources/Renderer.swift</string>
+			</dict>
+			<dict>
+				<key>File</key>
+				<string>UserModules/UserModule.playgroundmodule/Sources/Main constants.swift</string>
+			</dict>
 		</array>
 		<key>Modified</key>
 		<array>
@@ -39,7 +47,12 @@
 			</dict>
 		</array>
 		<key>Removed</key>
-		<array/>
+		<array>
+			<dict>
+				<key>File</key>
+				<string>UserModules/UserModule.playgroundmodule/Sources/SharedCode.swift</string>
+			</dict>
+		</array>
 		<key>Replaced</key>
 		<array/>
 	</dict>
