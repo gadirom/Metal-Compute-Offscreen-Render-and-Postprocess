@@ -1,4 +1,3 @@
-
 ## Overview
 This is a simple Swift Playground Book that let you explore the Apple's [Metal](https://developer.apple.com/metal/) technology on iOS. Upon running it creates a big number of triangular particles with random properties and move them on screen demonstrating interference patterns.
 
