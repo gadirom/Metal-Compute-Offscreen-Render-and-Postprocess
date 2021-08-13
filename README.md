@@ -7,10 +7,10 @@ The code was created entirely on an iPad Pro using the free [Swift Playgrounds](
 
 ## Contents
 The Playground Book consists of three pages: 
-`Main` page that prepares Playground’s LiveView, 
-`Renderer` page containing the declaration of a [renderer delegate](https://developer.apple.com/documentation/metal/basic_tasks_and_concepts/using_metal_to_draw_a_view_s_contents) function, 
-`MetalFunctions` page that contain the code of Metal functions,
-`Main Constants` page where you can tweak most of the properties of the particles and shaders by changing the values of the constants declared there.
+- `Main` page that prepares Playground’s LiveView, 
+- `Renderer` page containing the declaration of a [renderer delegate](https://developer.apple.com/documentation/metal/basic_tasks_and_concepts/using_metal_to_draw_a_view_s_contents) function, 
+- `MetalFunctions` page that contain the code of Metal functions,
+- `Main Constants` page where you can tweak most of the properties of the particles and shaders by changing the values of the constants declared there.
 
 ## Metal Pipeline
 The renderer delegate makes use of 5 different kinds of Metal functions that are successively encoded during a [draw call](https://developer.apple.com/documentation/metalkit/mtkview/1535943-draw) into the command buffer directly or via proper pipelines.
