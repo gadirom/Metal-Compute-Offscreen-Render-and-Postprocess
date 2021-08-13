@@ -14,10 +14,17 @@ The renderer makes use of 4 different kinds of Metal functions that are successi
 Three of the above mentioned functions are written in [Metal Shading Language](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf). These are: the compute function, the render function, and the shader function. Since Swift Playgrounds app won’t let you create a .metal file these functions are placed in the Swift code as a value of a string constant (hence, no Metal language is detected by GitHub for this repo), which is then used to initialize an MTLLibrary.
 
 ## Interference Patterns
-The rendered particles demonstrate interference patterns that somewhat resemble the image observed in the [double-slit experiment](https://en.m.wikipedia.org/wiki/Double-slit_experiment#/media/File%3AWave-particle_duality.gif) in physics. Though, in this case the patterns move and change over time creating an illusion of swarming behavior as though each particle is being controlled to “participate” in these patterns. Yet all the particles have fixed random velocities that they get at start and each one of them moves with constant speed without being ”aware” of each other’s existence. In fact, the interference patterns appear as an effect of initial discretization of the velocities. The number of different initial velocities is limited by a small amount (e.g., 100) hence particles with identical velocities form separate groups that superimpose on the screen and create patterns. 
+The rendered particles demonstrate interference patterns that somewhat resemble the image observed in the [double-slit experiment](https://en.m.wikipedia.org/wiki/Double-slit_experiment#/media/File%3AWave-particle_duality.gif) in physics. 
+
+Though, in this case the patterns move and change over time creating an illusion of swarming behavior as though each particle is being controlled to “participate” in these patterns. 
+
+Yet all the particles have fixed random velocities that they get at start and each one of them moves with constant speed without being ”aware” of each other’s existence, and the interference patterns appear, in fact, as an effect of initial discretization of the velocities. 
+
+The number of different initial velocities is limited by a small amount (e.g., 100) hence particles with identical velocities form separate groups that superimpose on the screen and create patterns. 
+
+Thus, simple starting condition of the system of particles leads to a very complex [emergent](https://en.m.wikipedia.org/wiki/Emergence) behaviour of the system.
 
 ## Installation
-Simply copy the root folder into the `Playgrounds folder` on your iCloud drive and the book will become available in the app.
+Simply copy the root folder into the `Playgrounds` folder on your iCloud drive and the book will become available in the Swift Playgrounds app.
 
-Alternatively, the folder may be placed anywhere on the iPad and then opened via `Locations` menu in the Swift Playgrounds app.
-
+Alternatively, the folder may be placed anywhere on the iPad and then opened via `Locations` menu in the app.
