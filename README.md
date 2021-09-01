@@ -53,6 +53,6 @@ The interference patterns appear, in fact, as an effect of initial discretizatio
 Thus, a simple starting condition of the system of particles leads to a very complex [emergent](https://en.m.wikipedia.org/wiki/Emergence) behaviour of the system.
 
 ## Installation
-If you read this from an iPad then download the repo and unzip it. Then tap on `Metal particles` file and it will be opened by the Swift Playgrounds app.
+If you are reading this from an iPad then download the repo and unzip it. Then tap on `Metal particles` file and it will be opened by the Swift Playgrounds app.
 
 Alternatively, the unzipped file may be placed anywhere on the iPad and then opened via `Locations` menu from the app.
