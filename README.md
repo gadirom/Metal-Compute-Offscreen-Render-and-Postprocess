@@ -1,16 +1,25 @@
+<p align="center">
+    <img src="https://img.shields.io/badge/platforms-iPadOS_14_-blue.svg" alt="SwiftUI" />
+    <img src="https://img.shields.io/badge/Swift-5.3-orange.svg" alt="Swift 5.3" />
+    
+</p>
+
 ## Overview
 This is a simple Swift Playground Book that explores the Apple's [Metal](https://developer.apple.com/metal/) technology on iOS.
 
-Upon running it shows a number of triangular particles with random properties that move on screen demonstrating emergent patterns.
+Upon running it shows a big number of 2D triangular particles processed by metal shaders that move on screen demonstrating emergent patterns.
 
 The code was created entirely on an iPad Pro using the free [Swift Playgrounds](https://apps.apple.com/ru/app/swift-playgrounds/id908519492?l=en) app.
 
 ## Contents
 The Playground Book consists of three pages: 
-- `Main` page that prepares Playground’s LiveView, 
-- `Renderer` page containing the declaration of a [renderer delegate](https://developer.apple.com/documentation/metal/basic_tasks_and_concepts/using_metal_to_draw_a_view_s_contents) function, 
-- `MetalFunctions` page that contain the code of Metal functions,
-- `Main Constants` page where you can tweak most of the properties of the particles and shaders by changing the values of the constants declared there.
+- [`Main`](https://github.com/gadirom/Metal-Compute-Offscreen-Render-and-Postprocess/blob/master/Metal%20particles.playgroundbook/Edits/UserEdits.diffpack/Chapters/Chapter1.playgroundchapter/Pages/My%20Playground.playgroundpage/main.swift.delta) page that prepares Playground’s LiveView, 
+- [`Renderer`](https://github.com/gadirom/Metal-Compute-Offscreen-Render-and-Postprocess/blob/master/Metal%20particles.playgroundbook/Edits/UserEdits.diffpack/UserModules/UserModule.playgroundmodule/Sources/Renderer.swift) page containing the declaration of a [renderer delegate](https://developer.apple.com/documentation/metal/basic_tasks_and_concepts/using_metal_to_draw_a_view_s_contents) function, 
+- [`MetalFunctions`](https://github.com/gadirom/Metal-Compute-Offscreen-Render-and-Postprocess/blob/master/Metal%20particles.playgroundbook/Edits/UserEdits.diffpack/UserModules/UserModule.playgroundmodule/Sources/MetalFunctions.swift) page that contain the code of Metal functions,
+- [`Main Constants`](https://github.com/gadirom/Metal-Compute-Offscreen-Render-and-Postprocess/blob/master/Metal%20particles.playgroundbook/Edits/UserEdits.diffpack/UserModules/UserModule.playgroundmodule/Sources/Main%20constants.swift) page where you can tweak most of the properties of the particles and shaders by changing the values of the constants declared there.
+
+The code is buried deep in the folders structure of the book.
+Use the links above to jump directly to a particular page if you want to view it without loading it into Swift Playdrounds App.
 
 ## Metal Pipeline
 The renderer delegate makes use of 5 different kinds of Metal functions that are successively encoded during a [draw call](https://developer.apple.com/documentation/metalkit/mtkview/1535943-draw) into the command buffer directly or via proper pipelines.
@@ -18,8 +27,8 @@ The order of encoding of the functions is as follows:
 
 1. Compute pipeline state: compute function (computes the vertices for each triangular particle)
 2. Render pipeline state: render function (renders triangles to an offscreen texture), shader function (returns interpolated color for each rendered pixel)
-3. Metal performance shaders (modify the rendered image with Laplacian, dilate, and Gaussian Blur emulation)
-4. Blit command (copies the final image onto the screen)
+3. Metal performance shaders (modify the rendered image with Laplacian, Dilate, and Gaussian Blur emulation)
+4. Blit command (copies the final image into the [drawable](https://developer.apple.com/documentation/metal/drawable_objects) texture)
 
 ## Metal Functions
 Three of the above mentioned functions are written in [Metal Shading Language](https://developer.apple.com/metal/Metal-Shading-Language-Specification.pdf). These are: the compute function, the render function, and the shader function.
