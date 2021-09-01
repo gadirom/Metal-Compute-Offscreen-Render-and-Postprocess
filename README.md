@@ -55,4 +55,4 @@ Thus, a simple starting condition of the system of particles leads to a very com
 ## Installation
 If you read this from an iPad then download the repo and unzip it. Then tap on `Metal particles` file and it will be opened by the Swift Playgrounds app.
 
-Alternatively, the unzipped file may be placed anywhere on the iPad and then opened via Locations menu from the app.
+Alternatively, the unzipped file may be placed anywhere on the iPad and then opened via `Locations` menu from the app.
