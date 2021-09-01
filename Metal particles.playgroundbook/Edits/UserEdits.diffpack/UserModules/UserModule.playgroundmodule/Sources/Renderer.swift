@@ -62,7 +62,7 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
         do{ computePiplineState = try self.device?.makeComputePipelineState(function: particleFunction!)
         }catch{print(error)}
         
-        //loading render Metal functions and setting up a Render Pipeline State
+        // loading Render Metal functions and setting up a Render Pipeline State
         let vertexFunction = library?.makeFunction(name: "vertexShader")
         let fragmentFunction = library?.makeFunction(name: "fragmentShader")
         
@@ -77,7 +77,7 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
         do{ renderPipelineState = try self.device?.makeRenderPipelineState(descriptor: pipelineStateDescriptor)
         }catch{print(error)}
         
-        //allocating buffers and creating particles
+        // allocating buffers and creating particles
         vertexBuffer = self.device?.makeBuffer(length: MemoryLayout<Vertex>.stride * vertexCount, options: [])
         particleBuffer = self.device?.makeBuffer(length: MemoryLayout<Particle>.stride * particleCount, options: [])
         
@@ -87,9 +87,9 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
     
     public func mtkView(_ view: MTKView, drawableSizeWillChange size: CGSize) {
         
-        //this function is called when the view size is changed
+        // this function is called when the view size is changed
         
-        //allocating the offscreen texture and setting the viewport size
+        // allocating the offscreen texture and setting the viewport size
         let texDescriptor = MTLTextureDescriptor()
         texDescriptor.textureType = MTLTextureType.type2D
         texDescriptor.width = Int(size.width) 
@@ -148,7 +148,7 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
         
         commandEncoder?.endEncoding()
         
-        //setting up Metal Performance Shaders
+        // setting up Metal Performance Shaders
         let blur = MPSImageGaussianBlur(device: device, sigma: blurRadius)
         
         let laplacian = MPSImageLaplacian(device: device)
@@ -169,12 +169,12 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
                 return buffer.device.makeTexture(descriptor: descriptor)!
             }
         
-        //encoding Metal Performance Shaders
-        laplacian.encode(commandBuffer: commandBuffer!, inPlaceTexture: &targetTexture, fallbackCopyAllocator: copyAllocator)
+        // encoding Metal Performance Shaders
+        if isLaplacian {laplacian.encode(commandBuffer: commandBuffer!, inPlaceTexture: &targetTexture, fallbackCopyAllocator: copyAllocator)}
         dilate.encode(commandBuffer: commandBuffer!, inPlaceTexture: &targetTexture, fallbackCopyAllocator: nil)
         blur.encode(commandBuffer: commandBuffer!, inPlaceTexture: &targetTexture, fallbackCopyAllocator: nil)
         
-        //copying the offscreen texture to the screen (drawable)
+        // copying the offscreen texture to the screen (drawable)
         guard let drawable = view.currentDrawable else {return}
         
         let blitEncoder = commandBuffer?.makeBlitCommandEncoder()
@@ -185,7 +185,7 @@ public class DelegateRenderer : NSObject, MTKViewDelegate
         
         blitEncoder?.endEncoding()
         
-        //showing drawable and commiting commands to GPU
+        // showing drawable and commiting commands to GPU
         commandBuffer?.present(drawable)
         commandBuffer?.commit()
         
