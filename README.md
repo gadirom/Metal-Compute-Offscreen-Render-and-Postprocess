@@ -52,6 +52,6 @@ The interference patterns appear, in fact, as an effect of initial discretizatio
 Thus, a simple starting condition of the system of particles leads to a very complex [emergent](https://en.m.wikipedia.org/wiki/Emergence) behaviour of the system.
 
 ## Installation
-Simply copy the root folder into the `Playgrounds` folder on your iCloud Drive and the book will become available in the Swift Playgrounds app.
+If you read this from an iPad then download the repo and unzip it. Then copy `Metal particles` file into the `Playgrounds` folder on your iCloud Drive and the book will become available in the Swift Playgrounds app.
 
-Alternatively, the folder may be placed anywhere on the iPad and then opened via `Locations` menu in the app.
+Alternatively, the file may be placed anywhere on the iPad and then opened via `Locations` menu in the app.
