@@ -5,7 +5,7 @@
     <img src="https://img.shields.io/badge/platforms-iPadOS_14_-blue.svg" alt="iPadOS" />
     <a href="https://swift.org/about/#swiftorg-and-open-source"><img src="https://img.shields.io/badge/Swift-5.3-orange.svg" alt="Swift 5.3" /></a>
     <a href="https://developer.apple.com/metal/"><img src="https://img.shields.io/badge/Metal-2.4-green.svg" alt="Metal 2.4" /></a>
-    <a href="https://apps.apple.com/ru/app/swift-playgrounds/id908519492?l=en"><img src="https://img.shields.io/badge/SwiftPlaygrounds-3-orange.svg" alt="Swift Playgrounds 3" /></a>
+    <a href="https://apps.apple.com/ru/app/swift-playgrounds/id908519492?l=en"><img src="https://img.shields.io/badge/SwiftPlaygrounds-3.4.1-orange.svg" alt="Swift Playgrounds 3" /></a>
    <a href="https://en.wikipedia.org/wiki/MIT_License"><img src="https://img.shields.io/badge/License-MIT-green.svg" alt="License: MIT" /></a>
     
 </p>
